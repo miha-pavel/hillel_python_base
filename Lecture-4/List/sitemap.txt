@@ -1,0 +1,128 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+    </head>
+
+    <body>
+        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
+        <script/>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog1.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog2.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog3.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog4.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog5.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog6.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog7.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog8.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog9.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog10.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog11.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog12.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog13.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog14.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog15.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog16.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog17.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog18.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog19.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog20.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog21.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog22.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog23.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog24.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog25.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        <sitemap>
+        <loc>https://www.qwerty.com/blog26.xml.gz</loc>
+        <lastmod>2020-07-17T20:04:39Z</lastmod>
+        </sitemap>
+        </sitemapindex>
+    </body>
+</html>

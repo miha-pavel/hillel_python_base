@@ -1,0 +1,14 @@
+{
+    "name": "Suzy Q. Public",
+    "street": "456 Broadway",
+    "apt": "333",
+    "city": "Miami",
+    "state": "FL",
+    "zip": 33333,
+    "is married": true,
+    "relationships": {
+        "siblings": ["John Q. Public", "Michael R. Public",
+                    "Thomas Z. Public"],
+        "parents": ["John Q. Public Sr.", "Mary S. Public"]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "defaul_db":{
+        "db_name": "postgres",
+        "db_user": "postgres",
+        "db_host": "127.0.0.1",
+        "db_port":"5432"
+    },
+    "custom_db":{
+        "db_name": "hillel_postgres_lesson",
+        "db_user": "postgres",
+        "db_host": "127.0.0.1",
+        "db_port":"5432"
+    },
+    "users": [
+        ["James", 25, "male", "USA"],
+        ["Leila", 32, "female", "France"],
+        ["Brigitte", 35, "female", "England"],
+        ["Mike", 40, "male", "Denmark"],
+        ["Elizabeth", 21, "female", "Canada"]
+    ],
+    "posts": [
+        ["Happy", "I am feeling very happy today", 1],
+        ["Hot Weather", "The weather is very hot today", 2],
+        ["Help", "I need some help with my work", 2],
+        ["Great News", "I am getting married", 1],
+        ["Interesting Game", "It was a fantastic game of tennis", 5],
+        ["Party", "Anyone up for a late-night party today?", 3]
+    ]
+}
