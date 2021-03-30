@@ -1,4 +1,4 @@
-#Дефоленое значение
+# #Дефолтное значение
 # class TestB():
 #     def __init__(self, attr):
 #         self.attr = attr
@@ -19,7 +19,7 @@
 
 
 
-#Абстрактный класс
+# #Абстрактный класс
 # from abc import ABC, abstractmethod
 # class ChessPiece(ABC):
 #     # общий метод, который будут использовать все наследники этого класса
@@ -47,7 +47,7 @@
 
 
 
-#Множественное наследование
+# # #Множественное наследование
 # class A:
 #     def hi(self):
 #         print("A")
@@ -61,8 +61,8 @@
 #         print("C")
 
 # class D(B, C):
-    # def hi(self):
-    #     print("D")
+#     def hi(self):
+#         print("D")
 
 # d = D()
 # print(d.hi())
@@ -74,9 +74,9 @@
 # d = D()
 # print(d.call_hi())
 
-class A: pass
-class B(A): pass
-class C: pass
-class D(C): pass
-class E(B, D): pass
+# class A: pass
+# class B(A): pass
+# class C: pass
+# class D(C): pass
+# class E(B, D): pass
 print(E.mro())
