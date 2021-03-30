@@ -129,37 +129,37 @@
 
 # #==============================
 # Статический метод
-class Car:
-    name = "c200"
-    make = "mercedez"
-    model = 2008
+# class Car:
+#     name = "c200"
+#     make = "mercedez"
+#     model = 2008
 
-    @property
-    def full_name_1(self):
-        return ' '.join([self.make, self.name])
+#     @property
+#     def full_name_1(self):
+#         return ' '.join([self.make, self.name])
 
-    def full_name_2(self):
-        return  ' '.join([self.make, self.name])
+#     def full_name_2(self):
+#         return  ' '.join([self.make, self.name])
 
-    @classmethod
-    def hello(cls):
-        print('Hello, класс {}'.format(cls.__name__))
+#     @classmethod
+#     def hello(cls):
+#         print('Hello, класс {}'.format(cls.__name__))
 
-    @staticmethod
-    def get_class_details():
-        print ("Это класс Car")
+#     @staticmethod
+#     def get_class_details():
+#         print ("Это класс Car")
 
-Car.get_class_details()
-Car.hello()
+# Car.get_class_details()
+# Car.hello()
 
-car = Car()
-print(car.full_name_1)
-print(car.full_name_2())
+# car = Car()
+# print(car.full_name_1)
+# print(car.full_name_2())
 
 
-class Square:
-    @staticmethod
-    def get_squares(a, b):
-        return a*a, b*b
+# class Square:
+#     @staticmethod
+#     def get_squares(a, b):
+#         return a*a, b*b
 
-print(Square.get_squares(3, 5))
+# print(Square.get_squares(3, 5))
