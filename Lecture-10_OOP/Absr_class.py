@@ -1,7 +1,8 @@
 #Дефолтное значение
 class TestB():
-    def __init__(self, attr):
+    def __init__(self, attr, attr_2):
         self.attr = attr
+        self.attr_2 = attr_2
 
 a = TestB()
 print(a.attr)
