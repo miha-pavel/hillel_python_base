@@ -1,20 +1,21 @@
-# #Дефолтное значение
-# class TestB():
-#     def __init__(self, attr):
-#         self.attr = attr
+#Дефолтное значение
+class TestB():
+    def __init__(self, attr, attr_2):
+        self.attr = attr
+        self.attr_2 = attr_2
 
-# a = TestB()
-# print(a.attr)
-# a.attr = 2
-# print(a.attr)
-# class TestB():
-#     def __init__(self, attr=1):
-#         self.attr = attr
+a = TestB()
+print(a.attr)
+a.attr = 2
+print(a.attr)
+class TestB():
+    def __init__(self, attr=1):
+        self.attr = attr
 
-# a = TestB()
-# print(a.attr)
-# a.attr = 2
-# print(a.attr)
+a = TestB()
+print(a.attr)
+a.attr = 2
+print(a.attr)
 
 
 
