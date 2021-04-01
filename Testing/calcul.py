@@ -7,7 +7,7 @@ class Calculator:
     def add(self, x1, x2):
         return x1 + x2
 
-    #multiply method - given two numbers, return the 
+    #multiply method - given two numbers, return the
     #multiplication of the two
     def multiply(self, x1, x2):
         return x1 * x2
@@ -25,4 +25,3 @@ class Calculator:
         except ZeroDivisionError:
             res = "infinity"
         return res
-            
