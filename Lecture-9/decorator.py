@@ -1,63 +1,65 @@
-# def my_shiny_new_decorator(function_to_decorate):
-#     # Внутри себя декоратор определяет функцию-"обёртку". Она будет обёрнута вокруг декорируемой, получая возможность исполнять произвольный код до и после неё.
-#     def the_wrapper_around_the_original_function():
-#         print("Я - код, который отработает до вызова функции")
-#         function_to_decorate() # Сама функция
-#         print("А я - код, срабатывающий после")
-#     # Вернём эту функцию
-#     return the_wrapper_around_the_original_function
+import datetime
 
-# # Представим теперь, что у нас есть функция, которую мы не планируем больше трогать.
-# def stand_alone_function():
-#     print("Я простая одинокая функция.")
+def property(full_name_1):
+    # Внутри себя декоратор определяет функцию-"обёртку". Она будет обёрнута вокруг декорируемой, получая возможность исполнять произвольный код до и после неё.
+    def the_wrapper_around_the_original_function():
+        print("Я - код, который отработает до вызова функции")
+        full_name_1() # Сама функция
+        print("А я - код, срабатывающий после")
+    # Вернём эту функцию
+    return the_wrapper_around_the_original_function
 
-# stand_alone_function()
-# print('-'*10)
-# # Однако, чтобы изменить её поведение, мы можем декорировать её, то есть просто передать декоратору, который обернет исходную функцию в любой код, который нам потребуется, и вернёт новую, готовую к использованию функцию:
-# stand_alone_function_decorated = my_shiny_new_decorator(stand_alone_function)
-# stand_alone_function_decorated()
+# # # Представим теперь, что у нас есть функция, которую мы не планируем больше трогать.
+# # def stand_alone_function():
+# #     print("Я простая одинокая функция.")
 
-
-# print('='*50)
-# stand_alone_function = my_shiny_new_decorator(stand_alone_function)
-# stand_alone_function()
+# # stand_alone_function()
+# # print('-'*10)
+# # # Однако, чтобы изменить её поведение, мы можем декорировать её, то есть просто передать декоратору, который обернет исходную функцию в любой код, который нам потребуется, и вернёт новую, готовую к использованию функцию:
+# # stand_alone_function_decorated = my_shiny_new_decorator(stand_alone_function)
+# # stand_alone_function_decorated()
 
 
-# print('='*50)
-# @my_shiny_new_decorator
-# def stand_alone_function():
-#     print("Я простая одинокая функция.")
-# stand_alone_function()
+# # print('='*50)
+# # stand_alone_function = my_shiny_new_decorator(stand_alone_function)
+# # stand_alone_function()
+
+
+# # print('='*50)
+# # @my_shiny_new_decorator
+# # def stand_alone_function():
+# #     print("Я простая одинокая функция.")
+# # stand_alone_function()
 
 
 # # Мультидекоратор
-# print('='*50)
-# def bread(func):
-#     def wrapper():
-#         print()
-#         func()
-#         print("<\______/>")
-#     return wrapper
+# # print('='*50)
+# # def bread(func):
+# #     def wrapper():
+# #         print()
+# #         func()
+# #         print("<\______/>")
+# #     return wrapper
 
-# def ingredients(func):
-#     def wrapper():
-#         print("#помидоры#")
-#         func()
-#         print("~салат~")
-#     return wrapper
+# # def ingredients(func):
+# #     def wrapper():
+# #         print("#помидоры#")
+# #         func()
+# #         print("~салат~")
+# #     return wrapper
 
-# def sandwich(food="--ветчина--"):
-#         print(food)
+# # def sandwich(food="--ветчина--"):
+# #     print(food)
 
 # sandwich = bread(ingredients(sandwich))
-# sandwich()
+# # # sandwich()
 
-# @bread
-# @ingredients
-# def sandwich(food="--ветчина--"):
-#     print(food)
+# # @ingredients
+# # @bread
+# # def sandwich(food="--ветчина--"):
+# #     print(food)
 
-# sandwich()
+# # sandwich()
 
 
 # # Передача аргументов декорируеммой функции
@@ -85,13 +87,15 @@
 #         function_to_decorate(*args, **kwargs)
 #     return a_wrapper_accepting_arbitrary_arguments
 
-# def decorator_name(funct):
-#     # Данная "обёртка" принимает любые аргументы
-#     def wrapper(*args, **kwargs):
-#         print("Code до")
-#         funct(*args, **kwargs)
-#         print("Code после")
-#     return wrapper
+def decorator_name(funct):
+    # Данная "обёртка" принимает любые аргументы
+    def wrapper(*args, **kwargs):
+        # print("Code до")
+        start_time = datetime.datetime.now()
+        funct(*args, **kwargs)
+        print(datetime.datetime.now()-start_time)
+        # print("Code после")
+    return wrapper
 
 # print('-'*50)
 # @a_decorator_passing_arbitrary_arguments
@@ -99,10 +103,10 @@
 #     print("Python is cool, no argument here.")
 
 
-# print('-'*50)
-# @decorator_name
-# def function_with_no_argument_():
-#     print("Python is cool, no argument here.")
+print('-'*50)
+@decorator_name
+def function_with_no_argument_():
+    print("Python is cool, no argument here.")
 
 # function_with_no_argument_()
 
@@ -121,41 +125,41 @@
 # function_with_named_arguments("Билл", "Линус", "Стив", platypus="Определенно!")
 
 
-# Передача аргументов декорируеммой функции
-# print('='*50)
-# def decorator_maker():
-#     print("Я создаю декораторы! Я буду вызван только раз: когда ты попросишь меня создать декоратор.")
-#     def my_decorator(func):
-#         print("Я - декоратор! Я буду вызван только раз: в момент декорирования функции.")
-#         def wrapped():
-#             print (
-#                 """
-#                     Я - обёртка вокруг декорируемой функции.
-#                     Я буду вызвана каждый раз, когда ты вызываешь декорируемую функцию.
-#                     Я возвращаю результат работы декорируемой функции.
-#                 """
-#             )
-#             return func()
-#         print("Я возвращаю обёрнутую функцию.")
-#         return wrapped
-#     print("Я возвращаю декоратор.")
-#     return my_decorator
+# # Передача аргументов декорируеммой функции
+# # print('='*50)
+# # def decorator_maker():
+# #     print("Я создаю декораторы! Я буду вызван только раз: когда ты попросишь меня создать декоратор.")
+# #     def my_decorator(func):
+# #         print("Я - декоратор! Я буду вызван только раз: в момент декорирования функции.")
+# #         def wrapped():
+# #             print (
+# #                 """
+# #                     Я - обёртка вокруг декорируемой функции.
+# #                     Я буду вызвана каждый раз, когда ты вызываешь декорируемую функцию.
+# #                     Я возвращаю результат работы декорируемой функции.
+# #                 """
+# #             )
+# #             return func()
+# #         print("Я возвращаю обёрнутую функцию.")
+# #         return wrapped
+# #     print("Я возвращаю декоратор.")
+# #     return my_decorator
 
-# # Давайте теперь создадим декоратор. Это всего лишь ещё один вызов функции
-# new_decorator = decorator_maker()
-# # Теперь декорируем функцию
-# def decorated_function():
-#     print("Я - декорируемая функция.")
-# decorated_function = new_decorator(decorated_function)
-# # Теперь наконец вызовем функцию:
-# decorated_function()
+# # # Давайте теперь создадим декоратор. Это всего лишь ещё один вызов функции
+# # new_decorator = decorator_maker()
+# # # Теперь декорируем функцию
+# # def decorated_function():
+# #     print("Я - декорируемая функция.")
+# # decorated_function = new_decorator(decorated_function)
+# # # Теперь наконец вызовем функцию:
+# # decorated_function()
 
-# print('-'*50)
-# @decorator_maker()
-# def decorated_function():
-#     print("Я - декорируемая функция.")
+# # print('-'*50)
+# # @decorator_maker()
+# # def decorated_function():
+# #     print("Я - декорируемая функция.")
 
-# decorated_function()
+# # decorated_function()
 
 
 # print('-'*50)

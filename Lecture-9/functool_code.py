@@ -1,6 +1,6 @@
 
-# # Классическая записи.
-# # Создали список из словарей книг
+# Классическая записи.
+# Создали список из словарей книг
 # asoiaf_books = [
 #     {'title' : 'Game of Thrones', 'published' : '1996-08-01', 'pages': 694},
 #     {'title' : 'Clash of Kings', 'published' : '1998-11-16', 'pages': 761},
@@ -65,17 +65,20 @@
 #     print(book)
 
 
-# # Функция map
+# Функция map
 # print('map: ', dir(map))
-# name_lengths = map(len, ['Маша', 'Петя', 'Вася'])
+# name_lengths = map(len, ('Маша', 'Петя', 'Вася'))
 # print('name_lengths: ', name_lengths)
 # print('list(name_lengths): ', list(name_lengths))
+# name_lengths = list(name_lengths)
+# print('list(name_lengths): ', tuple(name_lengths))
 
 # squares = map(lambda x: x * x, [0, 1, 2, 3, 4])
 # print('squares: ', squares)
 # print('list(squares): ', list(squares))
 # print(list(map(lambda x: x * x, [0, 1, 2, 3, 4])))
 # print([x * x for x in [0, 1, 2, 3, 4]])
+
 
 # import random
 # names = ['Маша', 'Петя', 'Вася']
@@ -103,16 +106,17 @@
 # print('list(secret_names): ', list(secret_names))
 
 
-# l1 = [1,2,3]
-# l2 = [4,5,6]
-# new_list = list(map(lambda x,y: x + y, l1, l2))
+# l1 = [1, 2, 3, ]
+# # print(l1[3])
+# l2 = [4, 5, 6, 7]
+# new_list = list(map(lambda x, y: x + y, l1, l2))
 # print('new_list: ', new_list)
 
 
 # Функция Reduce
-# from functools import reduce
-# sum = reduce(lambda a, x: a + x, [0, 1, 2, 3, 4], 2)
-# print('sum: ', sum)
+from functools import reduce
+sum = reduce(lambda a, x: a + x, [0, 1, 2, 3, 4], 2)
+print('sum: ', sum)
 # x – текущий значение,
 # а – аккумулятор. Это значение, которое возвращает выполнение lambda на предыдущем пункте.
 # reduce() перебирает все значения, и запускает для каждого lambda на текущих значениях а и х, и возвращает результат в а для следующей итерации.
@@ -139,16 +143,16 @@
 # print('all_max: ', all_max)
 
 
-# Функция filter
+# # Функция filter
 # mixed = ['мак', 'просо', 'мак', 'мак', 'просо', 'мак', 'просо', 'просо', 'просо', 'мак']
 # zolushka = list(filter(lambda x: x == 'мак', mixed))
 # print('zolushka: ', zolushka)
 # zolushka = [x for x in mixed if x=='мак']
 # print('zolushka: ', zolushka)
 
-# # Функция zip
-# a = [1,2,3]
-# b = "xyz"
-# c = (None, True, False)
-# res = list(zip(a, b, c))
-# print('res: ', res)
+# Функция zip
+a = [1,2,3]
+b = "xyz"
+c = (None, True, False)
+res = list(zip(a, b, c))
+print('res: ', res)

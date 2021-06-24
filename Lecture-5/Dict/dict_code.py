@@ -4,15 +4,17 @@
 # print('-'*50)
 # thisdict = dict(brand="Ford", model="Mustang", year=1964)
 # print('thisdict: ', thisdict)
+# print('thisdict: ', thisdict['year'])
+# print('thisdict: ', type(thisdict['year']))
 # note that keywords are not string literals
-# # note the use of equals rather than colon for the assignment
+# note the use of equals rather than colon for the assignment
 # some_dict = {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
 # print('some_dict: ', some_dict)
 # empty_dict = {}
 # empty_dict['asdf'] = 'some string'
 # empty_dict['asdfe'] = None
 # print('empty_dict: ', empty_dict)
-# print('empty_dict: ',type(empty_dict))
+# print('empty_dict: ', type(empty_dict))
 
 
 
@@ -21,10 +23,10 @@
 # print('List of the tuples:')
 # tuple_list = [('brand', "Ford"), ("model",  "Mustang"), ("year",1964)]
 # print('tuple_list: ', tuple_list)
-# # print(dict(tuple_list))
+# print(dict(tuple_list))
 # # print('.'*25)
-# list_keys = ['brand', 'model', "year", 'brand']
-# list_values = ["Ford",  'Mustang', 1964, 'Pavlo']
+# list_keys = ['brand', 'model', "year", 'brand', 'df']
+# list_values = ["Ford", 'Mustang', 1964, 'Pavlo', None] # None should be changed
 # sd = zip(list_keys, list_values)
 # print('sd: ', sd)
 # print('sd: ', list(sd))
@@ -37,7 +39,7 @@
 # print('-'*50)
 # # x = ('key1', 'key2', 'key3')
 # x = ['key1', 'key2', 'key3']
-# thisdict = dict.fromkeys(x, '')
+# thisdict = dict.fromkeys(x, None)
 # print(thisdict)
 # thisdict['key1'] = "asdf"
 # print(thisdict)
@@ -49,10 +51,14 @@
 
 
 # Dict generator (dict comprehension)
-# thisdict = {a: a ** 2 for a in range(7)}
+# len_list = 7
+# thisdict = {a: a ** 2 for a in range(len_list)}
 # print(thisdict)
 
 # print('.'*25)
+class Some():
+    pass
+
 car = {
     "brand": "Ford",
     "model": "Mustang",
@@ -60,18 +66,26 @@ car = {
     "is_product": False,
     "max_speed": 125.5,
     "options": ["conditionar", "elctric window", "hard ceiling"],
-    "gear": {1: "<30", 2: "30-50", 3: "50-70", 4: "70>"},
-    # "gear": "asgdjh"
+    "gear": {1: "<30", 2: "30-50", 3: "50-70", 4: {1: "<30", 2: "30-50", 3: "50-70", 4: "70>"}},
+    "4W": None
 }
+sime_inst = Some()
+print('sime_inst: ', sime_inst)
+print('sime_inst: ', type(sime_inst))
+new_car = dict(sime_inst=None)
+new_car = {sime_inst: None}
+print('new_car: ', new_car)
+br = car['options'][1]
+# br = car.get('brand', car.get('model', 'VAZ'))
+print('br: ', br)
 # print(car)
 
-# print(dir({}))
+print(dir({}))
 # # 1. Dictionary Length
 # print('='*100)
 # print('Dictionary Length:')
 # print('-'*50)
 # print(len(car))
-
 
 # 2. Dictionary is empty
 # print('='*100)
@@ -90,15 +104,15 @@ car = {
 
 #3. Accessing Items
 # print('.'*25)
-car = {
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 1964,
-    "is_product": False,
-    "max_speed": 125.5,
-    "options": ["conditionar", "elctric window", "hard ceiling"],
-    "gear": {1: "<30", 2: "30-50", 3: "50-70", 4: "70>"},
-}
+# car = {
+#     "brand": "Ford",
+#     "model": "Mustang",
+#     "year": 1964,
+#     "is_product": False,
+#     "max_speed": 125.5,
+#     "options": ["conditionar", "elctric window", "hard ceiling"],
+#     "gear": {1: "<30", 2: "30-50", 3: "50-70", 4: "70>"},
+# }
 # cars = [{"brand": "ford", "model": "MusTAng Gt500", "year": 1964}, {"brand": "ZAZ", "model": "Fortza", "year": 2001}, {"brand": "VW", "model": "Golf GTI", "year": 1999}]
 # print(car)
 
@@ -124,9 +138,9 @@ car = {
     "model": "Mustang",
     "year": 1964,
     "is_product": False,
+    "gear": {1: "<30", 2: "30-50", 3: "50-70", 4: "70>"},
     "max_speed": 125.5,
     "options": ["conditionar", "elctric window", "hard ceiling"],
-    "gear": {1: "<30", 2: "30-50", 3: "50-70", 4: "70>"},
 }
 
 # company = car["company"]
@@ -160,14 +174,19 @@ car = {
 # for item in car:
 #     print(car[item])
 # print('.'*25)
+# print('car.values(): ', car.values())
 # for value in car.values():
 #     print(value)
 # print('.'*25)
 # print('car.items(): ', list(car.items()))
+# print('car.items(): ', car.items())
 # for key, value in car.items():
-#     print(value)
+#     print('key: ', key)
+#     print('value: ', value)
+
 
 # for _, value in car.items():
+#     print(value)
 #     print(_, value)
 
 
@@ -185,16 +204,13 @@ car = {
 # else:
 #     print(f"No, {dict_key} key does not exists in the car dictionary")
 
-# opt_list = ['model', 'year', 'custom', 'company', 'country']
-# for cheked_key in opt_list:
-#     if cheked_key in car:
-#         print(f"Yes, {cheked_key} is one of the keys in the car dictionary")
-
 
 # #7. Adding Items
 # print('='*100)
 # print('Adding Items:')
 # print('-'*50)
+# print(car)
+# print(len(car))
 # car["color"] = "red"
 # print(car)
 # print(len(car))
@@ -205,6 +221,8 @@ car = {
 # print('Removing Items:')
 # print('-'*50)
 # #Python Dictionary pop() Method (Built-in)
+# print(car)
+# print(len(car))
 # model = car.pop("model")
 # print('model: ', model)
 # print(car)
@@ -213,6 +231,8 @@ car = {
 # print('.'*25)
 # #Python Dictionary popitem() Method (Built-in)
 # print('Removing the last item:')
+# print(car)
+# print(len(car))
 # last_item = car.popitem()
 # print('last_item: ', last_item)
 # print(car)
@@ -220,6 +240,8 @@ car = {
 
 # print('.'*25)
 # print('Using "del" method:')
+# print(car)
+# print(len(car))
 # del car["max_speed"]
 # print(car)
 # print(len(car))
@@ -235,14 +257,14 @@ car = {
 
 # print('.'*25)
 # print('Attention! The "del" method can delete whole dictionary:')
+# print(car)
 # del car
 # print(car)
 
 
-# # 9.Clear a dictionary (Built-in)
+# 9.Clear a dictionary (Built-in)
 # print('='*100)
 # print('Clear a dictionary:')
-# print('-'*50)
 # car.clear()
 # print(car)
 # print(len(car))
@@ -300,7 +322,7 @@ car = {
 # 1. Python Dictionary items() Method
 # print('='*100)
 # print('Python Dictionary items() Method:')
-# The items() method returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.
+# # The items() method returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.
 # print('-'*50)
 # x = car.items()
 # print('x: ', x)
@@ -315,6 +337,7 @@ car = {
 # print('Python Dictionary keys() Method:')
 # print('-'*50)
 # x = car.keys()
+# x = list(car.keys())
 # print(x)
 
 
@@ -342,4 +365,11 @@ car = {
 # print('Python Dictionary update() Method:')
 # print('-'*50)
 # car.update({"color": "White"})
+# car_1 = car
+# print('car_1: ', car_1)
 # print(car)
+
+fg = 'Mustang'
+for k, v in car.items():
+    if fg == v:
+        print(k)

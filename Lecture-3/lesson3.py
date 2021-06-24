@@ -5,6 +5,10 @@
 # print('type(current_temperature): ', type(current_temperature))
 
 # current_temperature = int(input('Сколько сейчас градусов на улице:'))
+# # print('current_temperature: ', current_temperature)
+# # print('type(current_temperature): ', type(current_temperature))
+# # if current_temperature:
+# #     print("Спасибо, я получил данние")
 # if current_temperature < 5:
 #     print('Одень шапку!')
 # else:
@@ -28,13 +32,13 @@
 # else:
 #     print('Можеш не одевать шапку')
 
-# my_str = ''
+# my_str = ""
 # if my_str:
 #     print(my_str)
 # else:
 #     print("No")
 
-# my_list = [1,2]
+# my_list = [1, 2]
 # if my_list:
 #     print(my_list)
 # else:
@@ -43,11 +47,12 @@
 # =================================================================
 # res if condotion else else_res
 # current_temperature = int(input('Сколько сейчас градусов на улице:'))
-# print('Одень шапку!') if current_temperature < 5 else print('Можеш не одевать шапку')
+# print('Одень шапку!') if current_temperature < 5 else print('Можеш не одевать шапку!')
 
 # current_temperature = int(input('Сколько сейчас градусов на улице:'))
-# x = current_temperature if current_temperature < 5 else 'Можеш не одевать шапку'
+# x = current_temperature if current_temperature < 5 else None
 # print('x: ', x)
+# print('type(x): ', type(x))
 
 # current_temperature = int(input('Сколько сейчас градусов на улице:'))
 # print('Одень шапку!') if current_temperature < 5 else pass
@@ -62,7 +67,7 @@
 # print('str_: ', str_)
 # print('type(str_): ', type(str_))
 # print("We are the so-called "Vikings" from the north.")
-# https://www.w3schools.com/python/python_strings_escape.asp
+# # # https://www.w3schools.com/python/python_strings_escape.asp
 # print("We are the so-called \"Vikings\" from the north.")
 # print('We are the so-called "Vikings" from the north.')
 
@@ -79,18 +84,15 @@
 # print("Hello \n\tworld")
 # print('Hello віфвіфл влідфосттвіслов осрлоровілріотілостіст стіфлововволд іфвоіфвілоі вірсловіслоі лорлоіфрсіфлрвл вловріфлорві іфвіфловрло World')
 # print('''
-#     Hello віфвіфл влідфосттвіслов осрлоровілріотілостіст стіфлововволд
-#     іфвоіфвілоі вірсловіслоі лорлоіфрсіфлрвл вловріфлорві іфвіфловрло
-#     World
+#     Hello віфвіфл "влідфосттвіслов" осрлоровілріотілостіст 'стіфлововволд'
+#     іфвоіфвілоі вірсло'віслоі "лорлоіфрсіфлрвл" вловріфлорві іфвіфловрло
+#     World від'єднатися
 # ''')
-# print("""
-#     Hello
-#     World
-# """)
+# print("""Hello World""")
 
 
 # Пространство имен строкового обекта
-df = 23
+# df = 23
 # print('df=', df)
 # print('df-', df)
 # print(df)
@@ -101,28 +103,32 @@ df = 23
 print(dir(''))
 
 # Длина строки
-# a = 'hello world!'
+# a = "hello world!"
 # print(len(a))
-# a = 'hello \nworld!'
+# a = "hello \nworld!"
 # print('a: ', a)
 # print(len(a))
 
 # # Получение єлемента по индексу
-# a = 'hello world!'
-# print(a[1])
-# a = 'hello \nworld!'
+# a = "hello world!"
+# print(a[-1])
+# a = "hello \nworld!"
 # print(a[6])
 
-# Перебор строки в цикле
-# a = 'hello world!'
+# Перебор стро
+# a = "hello world!"
 # for i in a:
-#     print(i)
+#     print(i)ки в цикле
+
 
 # Проверка существует ли подстрока в строке
 # txt = "The best things in life are free!"
 # print("free" in txt)
 # txt = "The best things in life are free!"
+# list_ = []
 # if "free" in txt:
+#     list_.append(txt)
+#     print('list_: ', list_)
 #     print("Yes, 'free' is present.")
 
 # txt = "The best things in life are free!"
@@ -143,9 +149,22 @@ print(dir(''))
 # print(b[2:])
 # print(b[-5:-2])
 # print(b[2:9:2])
-# print(b[::-1])
+# print(b[::-1]) # реверсирование строк
 # print(b[::-2])
-# print(b[:])
+# #TODO: капирование строк!!!!!!!!!!!!!!
+# print(b[:]) #корирование строк
+
+# a = b
+# print('b: ', b)
+# print('id b: ', id(b))
+# print('a: ', a)
+# print('id a: ', id(a))
+# e = "Hello,Wld!"
+# d = e[:]
+# print('e: ', e)
+# print('id e: ', id(e))
+# print('d: ', d)
+# print('id d: ', id(d))
 
 # Методи преобразования строк
 # a = "Hello, World!"
@@ -182,51 +201,56 @@ print(dir(''))
 # print(txt)
 
 # https://pythonworld.ru/osnovy/formatirovanie-strok-metod-format.html
-age = 36
-txt = "My name is John, and I am {}"
-print(txt.format(age))
+# age = 36
+# txt = "My name is John, and I am {}"
+# res = txt.format(age)
+# print('res: ', res)
+# age = 36
+# txt = "My name is John, and I am {} years old"
+# res = txt.format(age)
+# print('res: ', res)
 
-age = 36
-txt = "My name is John, and I am {}".format(age)
-print(txt)
+# age = 36
+# txt = "My name is John, and I am {} years old".format(age)
+# print(txt)
 
-quantity = 3
-itemno = 567
-price = 49.95
-myorder = "I want {} pieces of item {} for {} dollars."
-print(myorder.format(quantity, itemno, price))
+# quantity = 3
+# itemno = 567
+# price = 49.95
+# # myorder = "I want {} pieces of item {} for {} dollars."
+# # print(myorder.format(quantity, itemno, price))
 
-myorder = "I want to pay {2} dollars for {0} pieces of item {1}.".format(quantity, itemno, price)
-print(myorder.format(quantity, itemno, price))
+# myorder = "I want to pay {2} dollars for {0} pieces of item {1}.".format(quantity, itemno, price)
+# # print(myorder.format(quantity, itemno, price))
 
-myorder = f"I want to pay {price} dollars for {quantity} pieces of item {itemno}."
-print(myorder)
+# myorder = f"I want to pay {price} dollars for {quantity} pieces of item {itemno}."
+# print(myorder)
 
-print(f"I want to pay {price} dollars for {quantity} pieces of item {itemno}.")
+# print(f"I want to pay {price} dollars for {quantity} pieces of item {itemno}.")
 
-# https://pythonworld.ru/osnovy/formatirovanie-strok-operator.html
-myorder = "I want %s pieces of item %s for %s dollars." % (quantity, itemno, price)
-print(myorder)
-print('%d %s, %d %s' % (6, 'bananas', 10, 'lemons'))
+# # https://pythonworld.ru/osnovy/formatirovanie-strok-operator.html
+# myorder = "I want %s pieces of item %s for %s dollars." % (quantity, itemno, price)
+# print(myorder)
+# print('%d %s, %d %s' % (6, 'bananas', 10, 'lemons'))
 
 # Строковие Методи
 # https://www.w3schools.com/python/python_strings_methods.asp
-# txt = "hello, and welcome to my world."
-# x = txt.capitalize()
-# print (x)
+txt = "hello, and welcome to my world."
+x = txt.capitalize()
+print (x)
 
-# txt = "Hello, And Welcome To My World!"
-# x = txt.casefold()
-# print(x)
+txt = "Hello, And Welcome To My World!"
+x = txt.casefold()
+print(x)
 
-# txt = "banana"
-# x = txt.center(20)
-# print(x)
+txt = "banana"
+x = txt.center(20)
+print(x)
 
-# txt = "banana"
-# x = txt.center(20, "O")
-# print(x)
+txt = "banana"
+x = txt.center(20, "O")
+print(x)
 
-# txt = "I love apples, apple are my favorite fruit"
-# x = txt.count("apple")
-# print(x)
+txt = "I love apples, apple are my favorite fruit"
+x = txt.count("apple")
+print(x)

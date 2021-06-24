@@ -1,15 +1,16 @@
+# fruits = []
+# print('fruits: ', fruits)
+# fruits = list()
+# print('fruits: ', fruits)
 fruits = ['apple', 'banana', 'melon', 'pineapple']
-print('fruits: ', fruits)
-# fruits = [1, 'banana', 10.0, [1,2,3], {1:'w', 2:'r'}, None]
-# fruits = [1, 'banana', 10.0, 1, [1,2,3], [1,2,3], {1:'w', 2:'r'}, None]
+# print('fruits: ', fruits)
+# fruits = [1, 'banana', 10.0, [1, 2, 3], {1:'w', 2:'r'}, None]
+# fruits = [1, 'banana', 10.0, 1, [1, 2, 3], [1,2,3], {1:'w', 2:'r'}, None]
 # print('fruits: ', fruits[0])
 # print('fruits: ', fruits[1])
 # print('fruits: ', fruits[2])
 # print('fruits: ', fruits)
-# print('fruits: ', fruits)
-# print('fruits: ', fruits)
-# print('fruits: ', fruits)
-# print('fruits: ', fruits)
+
 
 # print('='*50)
 # print('DIR - какие методы существуют для класс (инструкции) list')
@@ -32,6 +33,7 @@ print('dir(list): ', dir(list()))
 
 # print('='*50)
 # print('ПОЛОЖИТЕЛЬНЫЕ ИНДЕКСЫ')
+fruits = ['apple', 'banana', 'melon', 'pineapple']
 # print('fruits[3]: ', fruits[0])
 # print('fruits[3]: ', fruits[3])
 # print('fruits[0:3]: ', fruits[0:3])
@@ -42,7 +44,8 @@ print('dir(list): ', dir(list()))
 # print('fruits[0]: ', fruits[i*2])
 
 # print('='*50)
-# print('НЕГАТИВНЫЕ ИНДЕКСЫ')
+# print('ОТРИЦАТЕЛЬНИЙ ИНДЕКСЫ')
+# fruits = ['apple', 'banana', 'melon', 'pineapple']
 # print('fruits[-1]: ', fruits[-1])
 # print('fruits[-3]: ', fruits[-3])
 # print('fruits[:-3]: ', fruits[:-3])
@@ -56,6 +59,7 @@ print('dir(list): ', dir(list()))
 
 # print('='*50)
 # print('IN - ПРОВЕРКА О СУЩЕСТВОВАНИИ ЭЛЕМЕНТА В СПИСКЕ')
+# fruits = ['apple', 'banana', 'melon', 'pineapple']
 # fruit = "watermelon"
 # print('fruit in fruits: ', fruit in fruits)
 # if fruit in fruits:
@@ -75,12 +79,29 @@ print('dir(list): ', dir(list()))
 # print('Новый список:', fruits)
 # print('Длина списка после:', len(fruits))
 
-updated_list = []
-fruits = [1, 'banana', '10.0', [1,2,3], None]
-for fruit in fruits:
-    if isinstance(fruit, str):
-        updated_list.append(fruit)
-print('updated_list: ', updated_list)
+# updated_list = []
+# fruits = [1, 'banana', '10.0', [1, 2, 3], None]
+# for fruit in fruits:
+#     if isinstance(fruit, str):
+#         updated_list.append(fruit)
+# print('updated_list: ', updated_list)
+
+# Добовление в начало
+# updated_list = ['er', 'sd', 'fg']
+# fruits = [1, 'banana', '10.0', [1, 2, 3], None]
+# for fruit in fruits:
+#     if isinstance(fruit, str):
+#         updated_list.reverse()
+#         updated_list.append(fruit)
+#         updated_list.reverse()
+# print('updated_list: ', updated_list)
+# Добовление в начало
+# updated_list = ['er', 'sd', 'fg']
+# fruits = [1, 'banana', '10.0', [1, 2, 3], None]
+# for fruit in fruits:
+#     if isinstance(fruit, str):
+#         updated_list.insert(0, fruit)
+# print('updated_list: ', updated_list)
 
 
 # print('='*50)
@@ -145,6 +166,10 @@ print('updated_list: ', updated_list)
 # print('min of list: ', min(list1))
 # print('max of list: ', max(list1))
 
+# list1 = ['1', '3', '4', '56', '7', '8']
+# print('min of list: ', min(list1))
+# print('max of list: ', max(list1))
+
 
 # print('='*50)
 # print('КОПИРОВАНИЕ СПИСКА')
@@ -164,6 +189,9 @@ print('updated_list: ', updated_list)
 # print('fruits: ', id(fruits[0]))
 # print('id_new_fruits: ', id(new_fruits[0]))
 # print('is id new_fruits[0] and id fruits[0] True: ', id(new_fruits[0]) == id(fruits[0]))
+# fruits.append('sd')
+# print('fruits: ', fruits)
+# print('new_fruits: ', new_fruits)
 
 # print('='*50)
 # print('КОПИРОВАНИЕ СПИСКА')
@@ -314,8 +342,12 @@ print('updated_list: ', updated_list)
 # list1 = ["a", "b", "c"]
 # list2 = [1, 2, 3]
 # print('id(list1): ', id(list1))
+# # list1.extend(list2)
+
 # list1.extend(list2)
 # list3 = list1
+# print('list3: ', list3)
+# print('list1: ', list1)
 # print('list3: ', list3)
 # print('Новый список list1:', list1)
 # print('id(list1): ', id(list1))
@@ -405,30 +437,41 @@ print('updated_list: ', updated_list)
 # print('cars: ', cars)
 
 
-# new_fruits = []
-# fruits = [1,'abra', 2, None, {1,2,3,4}, 10.45, 3, 'pineapple']
-# for fruit in fruits:
-#     if isinstance(fruit, str):
-#         new_fruits.append(fruit.startswith('ap'))
-# print('Новый список new_fruits:', new_fruits)
+fruits = [1,'abra', 2, None, {1,2,3,4}, 10.45, 3, 'pineapple']
+new_fruits = []
+for fruit in fruits:
+    if isinstance(fruit, int):
+        new_fruits.append(fruit**3)
+print('Новый список new_fruits:', new_fruits)
 
-# new_fruits = [fruit**3 for fruit in fruits if isinstance(fruit, int) or isinstance(fruit, float) ]
-# print('Новый список new_fruits:', new_fruits)
+new_fruits = [fruit**3 for fruit in fruits if isinstance(fruit, int)]
+print('Новый список new_fruits:', new_fruits)
 
 # print('='*50)
 # print('LIST COMPREHENSION')
-# list1 = [1, 3, 4, 56, 7, 8, 25]
-# new_list = [i**2 for i in list1]
-# print('new_list: ', type(new_list))
-# print('new_list: ', new_list)
+list1 = [1, 3, 4, 56, 7, 8, 25]
+new_list = [i**2 for i in list1]
+print('new_list: ', type(new_list))
+print('new_list: ', new_list)
 
-# even_list = [i for i in list1 if i % 2 == 0]
-# print('even_list: ', even_list)
+even_list = [i for i in list1 if i % 2 == 0]
+print('even_list: ', even_list)
 
-# squer_even_list = [i**2 for i in list1 if i % 2 == 0]
-# print('squer_even_list: ', squer_even_list)
+squer_even_list = [i**2 for i in list1 if i % 2 == 0]
+print('squer_even_list: ', squer_even_list)
 
-# bad_lists = ['Adobe', 'Audience', 'Manager', 'Ds', 'This', 'There', 'These']
-# filter_list = ['This', 'Ds', 'There', 'These']
-# result_list = [i for i in bad_lists if i not in filter_list]
-# print('result_list: ', result_list)
+bad_lists = ['Adobe', 'Audience', 'Manager', 'Ds', 'This', 'There', 'These']
+filter_list = ['This', 'Ds', 'There', 'These']
+result_list = [i for i in bad_lists if i not in filter_list]
+print('result_list: ', result_list)
+
+
+a=3
+b=4
+c=5
+print(f'''В элементе dsTGgNDXZrI ------===> {a} символов
+В элементе dGJhYUrpJOCLfRnh ------===> {b} символов
+В элементе gtyMw ------===> {c} символов''')
+
+
+print('В элементе dsTGgNDXZrI ------===> 0 символов a В элементе dGJhYUrpJOCLfRnh ------===> 0 символов a В элементе snjUSrs ------===> 0 символов a В элементе gtyMw ------===> 0 символов a ')

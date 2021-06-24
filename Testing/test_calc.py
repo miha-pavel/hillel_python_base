@@ -11,11 +11,9 @@ class TestCalculator(unittest.TestCase):
         cls.calculator = Calculator()
     #Each test method starts with the keyword test
     def setUp(self):
-        pass
         print(f"\n{'-'*50}\nsetUp")
 
     def tearDown(self):
-        pass
         print(f"tearDown")
 
     @classmethod
@@ -24,7 +22,22 @@ class TestCalculator(unittest.TestCase):
 
     def test_add(self):
         print('\ntest_add: ')
-        self.assertEqual(self.calculator.add(4, 7), 11)
+        arg_1 = 4
+        arg_2 = 7
+        res = 10
+        self.assertEqual(self.calculator.add(arg_1, arg_2), res)
+
+    def test_add_not_eq(self):
+        print('\ntest_add: ')
+        self.assertNotEqual(self.calculator.add(4, 7), 10)
+
+    def test_add_1(self):
+        print('\ntest_add: ')
+        calc_response = self.calculator.add(4, 7)
+        print('calc_response: ', calc_response)
+        expactation = 11
+        print('expactation: ', expactation)
+        self.assertEqual(calc_response, expactation)
 
     def test_subtract(self):
         print('\ntest_subtract: ')
@@ -46,4 +59,3 @@ class TestCalculator(unittest.TestCase):
     def test_divide_zero(self):
         print('\ntest_divide_zero: ')
         self.assertEqual(self.calculator.divide(0, 10), 0)
-

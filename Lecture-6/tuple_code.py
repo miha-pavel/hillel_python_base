@@ -9,10 +9,10 @@
 # st = tuple('hello, world!')
 # print('st: ', st)
 # print('type(st): ', type(st))
-# st = ('hello, world!')
+
+# st = 'hello, world!'
 # print('st: ', st)
 # print('type(st): ', type(st))
-
 # sd = st,
 # print('sd: ', sd)
 # print('type(sd): ', type(sd))
@@ -25,14 +25,31 @@
 # print('t: ', t)
 # print('type(t): ', type(t))
 
-# def some_function(a, b):
-#     return a, b
+# def some_function(
+#     a,
+#     b,
+# ):
+#     return a, b, a+b
 
 # a = 1
 # b = 2
 # function_t = some_function(a, b)
 # print('function_t: ', function_t)
+
+# a = 2
+# b = 4
+# function_t = some_function(a, b)
+# print('function_t: ', function_t)
 # print('type(function_t): ', type(function_t))
+# a_t, b_t, s_t = some_function(a, b)
+# print('a_t: ', a_t)
+# print('type(a_t): ', type(a_t))
+# print('b_t: ', b_t)
+# print('type(b_t): ', type(b_t))
+# a_t, _, _ = some_function(a, b)
+# print('a_t: ', a_t)
+# print('type(a_t): ', type(a_t))
+
 
 
 # Кортеж неизменяемий обект
@@ -66,6 +83,7 @@
 # t = (2,)
 # print('t: ', t)
 # print('type(t): ', type(t))
+# print('type(t): ', len(t))
 
 # t = 2,
 # print('t: ', t)
@@ -86,18 +104,21 @@
 # print('type(function_a): ', type(function_a))
 
 # # Лучшее представление кортежей
-# t = (1,)
+# t = (1, 2, 3, 4, 5,)
 # print('t: ', t)
 # print('type(t): ', type(t))
-# l = [1, 2, 3, 4, 5, ]
+# l = [1, 2, 3, 4, 5,]
 # print('l: ', l)
-# d = {'s': 1, 'w': 2, }
+# d = {'s': 1, 'w': 2,}
 # print('d: ', d)
 
 
 # # Упаковка єлементов кортежа
 # t = ('foo', 'bar', 'baz', 'qux')
-# (s1, s2, s3, s4) = t
+# print('t: ', t)
+# print('type(t): ', type(t))
+# # (s1, s2, s3, s4) = t
+# s1, s2, s3, s4 = t
 # print('s1: ', s1)
 # print('type(s1): ', type(s1))
 # print('s2: ', s2)
@@ -121,11 +142,6 @@
 # print('s2: ', s2)
 # print('s1: ', s1)
 
-# f_l = [1,2,3,45,6,]
-# for f in f_l:
-#     print(f)
-
-
 # Использование спред оператора
 # fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
 # (green, yellow, *red) = fruits
@@ -142,9 +158,9 @@
 
 # Действия с кортежами
 print(dir(tuple()))
-# Длина кортежа
-fruits = ("apple", "banana", "cherry")
-print(len(fruits))
+# # Длина кортежа
+# fruits = ("apple", "banana", "cherry")
+# print(len(fruits))
 
 
 # # Работа с индексами
@@ -168,12 +184,12 @@ print(len(fruits))
 
 
 # # Наличие єлемента в кортеже
-fruits = ("apple", "banana", "cherry")
-element = "apple"
-if element in fruits:
-    print(f'Yes, {element} is in the fruits tuple')
-else:
-    print(f'No, {element} is not in the fruits tuple')
+# fruits = ("apple", "banana", "cherry")
+# element = "apple"
+# if element in fruits:
+#     print(f'Yes, {element} is in the fruits tuple')
+# else:
+#     print(f'No, {element} is not in the fruits tuple')
 
 # append
 # fruits = ("apple", "banana", "cherry")
@@ -199,9 +215,9 @@ else:
 
 
 # Применение цикла
-fruits = ("apple", "banana", "cherry")
-for fruit in fruits:
-    print(fruit)
+# fruits = ("apple", "banana", "cherry")
+# for fruit in fruits:
+#     print(fruit)
 
 # fruits = ("apple", "banana", "cherry")
 # for i in range(len(fruits)):
@@ -214,13 +230,15 @@ for fruit in fruits:
 #     i = i + 1
 
 # Обеденение(канкатенация) кортежей
-tuple1 = ("a", "b" , "c")
-tuple2 = (1, 2, 3)
-tuple3 = tuple1 + tuple2
-print('tuple3: ', tuple3)
-tuple1 = ("a", "b" , "c")
-tuple2 = (1, 2, 3)
-tuple3 = (*tuple1, *tuple2)
+# tuple1 = ("a", "b" , "c")
+# tuple2 = (1, 2, 3)
+# tuple3 = tuple1 + tuple2
+# print('tuple3: ', tuple3)
+# tuple1 = ("a", "b" , "c")
+# tuple2 = (1, 2, 3)
+# tuple3 = (*tuple1, *tuple2)
+# tuple3 = ("a", "b", "c",1, 2, 3)
+# print('tuple3: ', tuple3)
 
 
 # fruits = ("apple", "banana", "cherry")
@@ -237,6 +255,12 @@ tuple3 = (*tuple1, *tuple2)
 # print('element: ', element)
 
 # tuple comprehension
-# tc = tuple(i*2 for i in (1, 2, 3))
-# print('tc: ', tc)
-# print('type(tc): ', type(tc))
+tc = [i*2 for i in (1, 2, 3)]
+print('tc: ', tc)
+tc = list(i*2 for i in (1, 2, 3))
+print('tc: ', tc)
+tc = (i*2 for i in (1, 2, 3))
+print('tc: ', tc)
+tc = tuple(i*2 for i in (1, 2, 3))
+print('tc: ', tc)
+print('type(tc): ', type(tc))

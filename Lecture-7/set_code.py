@@ -1,4 +1,6 @@
-# set_ = {1,2,3,4,5,6}
+# set_ = {1,2,3,4,5}
+# print('set_: ', set_)
+# print('type(set_): ', type(set_))
 # dict_ = {}
 # set_1 = set()
 # print('set_1: ', set_1)
@@ -14,7 +16,7 @@
 # print('new_list: ', new_list)
 
 
-# print(dir(set()))
+print(dir(set()))
 
 
 # Множество неповторяющяяся python коллекция
@@ -23,12 +25,13 @@
 
 
 # Єлементи множества должни бить не изменяеми
-# type(set_1) = {"abc", 34, True, 40, "male"}
+# set_1 = {"abc", 34, True, 40, "male"}
 # print('set_1: ', set_1)
 
-# set_1 = {"abc", 34, True, 40.5, set()}
-# set_1 = {"abc", 34, True, 40.5, {}}
-# set_1 = {"abc", 34, True, 40.5, []}
+# # set_1 = {"abc", 34, True, 40.5, set()}
+# # set_1 = {"abc", 34, True, 40.5, {}}
+# # set_1 = {"abc", 34, True, 40.5, []}
+# set_1 = {"abc", 34, True, 40.5, ()}
 # print('set_1: ', set_1)
 
 
@@ -43,9 +46,11 @@
 # print('set_2: ', set_2)
 # set_3 = set()
 # print('set_3: ', set_3)
-# set_4 = set('foobar')
+# set_4 = set(['foobar'])
 # print('set_4: ', set_4)
-# s_1 = {'a', 'b', 'foo'}
+# s_1 = ['a', 'b', 'foo']
+# print('s_1: ', s_1)
+# print('type(s_1): ', type(s_1))
 # set_5 = set(s_1)
 # print('set_5: ', set_5)
 # print('type(set_5): ', type(set_5))
@@ -76,20 +81,22 @@
 # fruits = {"apple", "banana", "cherry"}
 # fruits.remove("banana")
 # print(fruits)
-# # Если удаляемый элемент не существует, метод remove () вызовет ошибку.
-# fruits.remove("banana")
-# print(fruits)
-# # Если удаляемый элемент не существует, метод discard () НЕ выдаст ошибку.
+# # Если удаляемый элемент не существует, метод remove() вызовет ошибку.
+# # fruits.remove("banana")
+# # print(fruits)
+# # Если удаляемый элемент не существует, метод discard() НЕ выдаст ошибку.
 # print(fruits)
 # fruits.discard("banana")
+# print(fruits)
+# fruits.discard("apple")
 # print(fruits)
 
 
 # Наборы неупорядочены, поэтому при использовании метода pop() вы не знаете, какой элемент будет удален.
 # fruits = {"apple", "banana", "cherry"}
 # x = fruits.pop()
+# print('x: ', x)
 # print('fruits: ', fruits)
-# print(x)
 # print(fruits)
 # fruits = {"apple", "banana", "cherry"}
 # fruits.clear()
@@ -111,44 +118,46 @@
 # print('id(x): ', id(x))
 # print('id(fruits): ', id(fruits))
 
-# fruits = {"apple", "banana", "cherry"}
-# x = set(**fruits)
+# fruits = ["apple", "banana", "cherry"]
+# x = set({*fruits})
 # print(x)
 # print('id(x): ', id(x))
 # print('id(fruits): ', id(fruits))
 
 
-# Обновление другим множеством
-fruits = {"apple", "banana", "cherry"}
-tropical = {"pineapple", "mango", "papaya"}
-fruits.update(tropical)
-print('fruits: ', fruits)
-fruits = {"apple", "banana", "cherry"}
-tropical = {"pineapple", "mango", "papaya"}
-fruits|=tropical
-print('fruits: ', fruits)
+
+# # Обновление другим множеством
+# fruits = {"apple", "banana", "cherry"}
+# tropical = {"pineapple", "mango", "papaya"}
+# fruits.update(tropical)
+# print('fruits: ', fruits)
+# fruits = {"apple", "banana", "cherry"}
+# tropical = {"pineapple", "mango", "papaya"}
+# fruits|=tropical
+# print('fruits: ', fruits)
 # # Объект в методе update() может бить не только множеством, это может быть любой повторяемый объект (кортежи, списки, словари и т. Д.).
-fruits = {"apple", "banana", "cherry"}
-tropical_list = ["kiwi", "orange"]
-fruits.update(tropical_list)
-print(fruits)
+# fruits = {"apple", "banana", "cherry"}
+# tropical_list = ["kiwi", "orange"]
+# fruits.update(tropical_list)
+# print(fruits)
 
-# Удаляет элементы в этом наборе, которых нет в другом, указанном наборе (х)
-x = {"apple", "banana", "cherry"}
-y = {"google", "microsoft", "apple"}
-x.intersection_update(y)
-print('x: ', x)
-x = {"apple", "banana", "cherry"}
-y = {"google", "microsoft", "apple"}
-x&=y
-print(x)
+# # Удаляет элементы в этом наборе, которых нет в другом, указанном наборе (х)
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+# x.intersection_update(y)
+# print('x: ', x)
+# x = {"apple", "banana", "cherry"}
+# y = {"google", "microsoft", "apple"}
+# x &= y
+# print(x)
 
-# # Удаляет элементы из этого набора, которые также включены в другой указанный набор.
+# Удаляет элементы из этого набора, которые также включены в другой указанный набор.
 # x = {"apple", "banana", "cherry"}
 # y = {"google", "microsoft", "apple"}
 # # Удалите элементы, которые есть в обоих наборах:
 # x.difference_update(y)
 # print(x)
+# print(y)
 # x = {"apple", "banana", "cherry"}
 # y = {"google", "microsoft", "apple"}
 # # Удалите элементы, которые есть в обоих наборах:
@@ -157,7 +166,7 @@ print(x)
 # x = {"apple", "banana", "cherry"}
 # y = {"google", "microsoft", "apple"}
 # # Удалите элементы, которые есть в обоих наборах:
-# x-=y
+# x -= y
 # print(x)
 
 # x = {"apple", "banana", "cherry"}
@@ -175,22 +184,26 @@ print(x)
 
 
 
-# Обеденение двух и более множеств
-# Вернуть набор, содержащий объединение наборов
+# # Обеденение двух и более множеств
+# # Вернуть набор, содержащий объединение наборов
 # set1 = {"a", "b" , "c"}
 # set2 = {1, 2, "b", 3}
 # set3 = set1.union(set2)
 # print(set3)
-# set3_ = set1|set2
+# print('set1: ', set1)
+# print('set2: ', set2)
+# set3_ = set1 | set2
 # print('set3_: ', set3_)
 
 
-# Пересичение
-# Возвращает набор, являющийся пересечением двух других наборов.
+# # Пересичение
+# # Возвращает набор, являющийся пересечением двух других наборов.
 # x = {"apple", "banana", "cherry"}
 # y = {"google", "microsoft", "apple"}
 # z = x.intersection(y)
 # print(z)
+# print('x: ', x)
+# print('y: ', y)
 # z_ = x & y
 # print('z_: ', z_)
 
@@ -221,12 +234,14 @@ print(x)
 # print('z_: ', z_)
 
 
-# # Проверка на отличие
-# # Возвращает, есть ли у двух наборов пересечение или нет.
+# Проверка на отличие
+# Возвращает, есть ли у двух наборов пересечение или нет.
 # x = {"apple", "banana", "cherry"}
 # y = {"google", "microsoft", "facebook"}
 # # Вернуть True, если в наборе y нет элементов в наборе x:
 # z = x.isdisjoint(y)
+# t = x.union(y)
+# print('t: ', t)
 # print(z)
 # x = {"apple", "banana", "cherry"}
 # y = {"google", "microsoft", "apple"}
@@ -254,8 +269,10 @@ print(x)
 # y = {"a", "b", "c"}
 # # Вернуть True, если все элементы набора y присутствуют в наборе x:
 # z = x.issuperset(y)
+# d = y.issubset(x)
+# print('d: ', d)
 # print(z)
-# z_ = x>=y
+# z_ = x >= y
 # print('z_: ', z_)
 # x = {"f", "e", "d", "c", "b"}
 # y = {"a", "b", "c"}
@@ -267,8 +284,8 @@ print(x)
 
 # Встроенние методи множеств
 # Длина множества
-# fruits = {"apple", "banana", "cherry"}
-# print(len(fruits))
+fruits = {"apple", "banana", "cherry"}
+print(len(fruits))
 
 # all() метод
 # Возвращает True, если все элементы набора истинны (или если набор пуст).
@@ -288,6 +305,8 @@ print(x)
 # l = set()
 # print('type(l): ', type(l))
 # print(all(l))
+# print(bool(''))
+
 
 # any() метод
 # Возвращает True, если какой-либо элемент набора истинен. Если набор пуст, возвращает False.
