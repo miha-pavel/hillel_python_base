@@ -18,24 +18,24 @@
 # # Создаем объект класса Car под названием car_b
 # car_b = CarMercedez()
 
-# print(type(car_a))
-# print(type(car_b))
+# # print(type(car_a))
+# # print(type(car_b))
 # # print(dir(car_b))
 # # str_ = ''
-# # print(type(str_))
+# # # print(type(str_))
 # # print(dir(str_))
 
-# # car_a.start()
+# car_a.start()
 
-# # print(car_a.model)
-# # car_a.model = 2020
-# # print(car_a.model)
-# # print(car_b.model)
+# print('car_a.model', car_a.model)
+# car_a.model = 2020
+# print('car_a.model', car_a.model)
+# print('car_b.model', car_b.model)
 
 # def brabus_switch_gear(gear_number):
 #     print(f'switched gear - {gear_number}')
 # car_b.custom_switch_gear = brabus_switch_gear
-# print('Alex car-', type(car_b))
+# print('Alex car -', type(car_b))
 # print(dir(car_b))
 # print(dir(car_a))
 # car_b.custom_switch_gear(1)
@@ -43,6 +43,7 @@
 # car_b.custom_switch_gear(3)
 # # Все пользовательские атрибуты сохраняются в атрибуте __dict__, который является словарем.
 # print(car_b.__dict__)
+# print(car_a.__dict__)
 
 
 # ==============================
@@ -50,7 +51,7 @@
 #     # создаем атрибуты класса
 #     car_count = 0
 
-#     # создаем методы класса
+#     # создаем метод екземпляра класса
 #     def start(self, name, make, model):
 #         print("Двигатель заведен")
 
@@ -79,21 +80,23 @@
 # class Car:
 #     def start(self):
 #         message = "Двигатель заведен"
+#         print('message: ', message)
 #         return message
 
 
 # car_a = Car()
-# print(car_a.message)
+# # print(car_a.message)
+# car_a.start()
 
 
-# #==============================
-# # Глобальная переменная
+#==============================
+# Глобальная переменная
 # class Car:
 #     message1 = "Двигатель заведен"
 
 #     def start(self):
 #         message2 = "Автомобиль заведен"
-#         msg = Car.message1
+#         msg = self.message1
 #         print('msg: ', msg)
 #         return message2
 
@@ -109,8 +112,8 @@
 #     # создание атрибутов класса
 #     car_count = 0
 
-#     # создание методов класса
-#     def __init__(self, name, make, model):
+#     # создание конструктора класса
+#     def __init__(self, name='df', make='gh', model=2015):
 #         Car.car_count +=1
 #         print(Car.car_count)
 #         self.name = name
@@ -123,12 +126,9 @@
 # car_a = Car()
 # car_b = Car("corolla", "toyota", 1999)
 # car_b.start()
-# car_c = Car("crv", "honda", 20202112)
+# car_c = Car("crv", "honda", 2012)
 # car_c.car_count = 10
 # print('car_c.car_count: ', car_c.car_count)
-# car_d = Car("crv", "honda", 2020)
-# car_b.start(self)
-# car_b.start(self)
 
 
 # ==============================
@@ -141,9 +141,16 @@
 #     @property
 #     def full_name_1(self):
 #         return ' '.join([self.make, self.name])
+    
+#     @staticmethod
+#     def get_class_details(make, name):
+#         print("Это класс Car")
+#         return f'{make}_{name}'
 
 #     def full_name_2(self):
 #         print('self: ', self)
+#         full_name = self.get_class_details(self.make, self.name)
+#         print('full_name: ', full_name)
 #         return  ' '.join([self.make, self.name])
 
 #     @classmethod
@@ -151,19 +158,16 @@
 #         print('cls: ', cls)
 #         print('Hello, класс {}'.format(cls.__name__))
 
-#     @staticmethod
-#     def get_class_details():
-#         print (f"Это класс Car")
 
-# sd = Car()
-# # sd.get_class_details()
-# sd.hello()
+# car = Car()
+# car.full_name_2()
+# car.hello()
 
 
 # car = Car()
 # print(car.name)
-# print(car.full_name_1)
 # print(car.full_name_2())
+# print(car.full_name_1)
 
 
 
@@ -180,7 +184,7 @@
 # print('dir(ds): ', dir(ds))
 
 # Жизненний цикл
-# class SomeClass(object):
+# class SomeClass():
 #     def __new__(cls, *args, **kwargs):
 #         print("new")
 #         return super(SomeClass, cls).__new__(cls)
@@ -189,10 +193,14 @@
 #         print("init")
 #         self.name = name
 
+#     def get_name(self):
+#         return self.name
+
 #     def __del__(self):
 #         print('удаляется объект {} класса SomeClass'.format(self.name))
 
 # obj = SomeClass("john")
+# obj.get_name()
 # del obj
 # obj
 #Дефолтное значение
@@ -213,6 +221,9 @@
 # a = TestB()
 # print(a.attr)
 # a.attr = 2
+# print(a.attr)
+
+# a = TestB(3)
 # print(a.attr)
 
 
@@ -242,6 +253,7 @@
 # print('dir(car_a): ', dir(car_a))
 # print(car_a.name)
 # print(car_a._model)
+# print(car_a.__make)
 # print(car_a._Car__make)
 # print(car_a.get_name())
 # print(car_a._get_model())
@@ -249,151 +261,6 @@
 
 # #================================================
 # Наследование
-class Figure:
-    def __init__(self, color):
-        self.__color = color
-
-    @property
-    def color(self):
-        return self.__color
-
-    @color.setter
-    def color(self, c):
-        self.__color = c
-
-
-class Rectangle(Figure):
-    def __init__(self, width, height, color):
-        # super – это ключевое слово, которое используется для обращения к родительскому классу.
-        super().__init__(color) #визов  конструктора родительского класса
-        self._height = height
-        self.__width = width
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, w):
-        if w > 0:
-            self.__width = w
-        else:
-            raise ValueError
-
-    def set_width(self, w):
-        if w > 0:
-            self.__width = w
-        else:
-            raise ValueError
-
-    def height(self):
-        return self._height
-
-    def area(self):
-        return self.__width * self._height
-
-
-rect = Rectangle(10, 20, "green")
-
-
-# print('rect.width: ', rect.width)
-# rect.width = 30
-# print('rect.width: ', rect.width)
-# rect.width = -30
-# rect.set_width(50)
-# print('rect.width: ', rect.width)
-
-
-# print('rect.height: ', rect.height())
-# rect._height = 40
-# print('rect.height: ', rect.height())
-# print('rect.height: ', rect._height)
-
-
-# print('rect.color: ', rect.color)
-# rect.color = "red"
-# print('rect.color: ', rect.color)
-
-
-# fig = Figure('arange')
-# print('fig.height: ', fig.height())
-# fig._height = 40
-# print('fig.height: ', fig.height())
-# print('fig.height: ', fig._height)
-
-
-# # #Абстрактный класс
-from abc import ABC, abstractmethod
-class ChessPiece(ABC):
-    # общий метод, который будут использовать все наследники этого класса
-    def draw(self):
-        print("Drew a chess piece")
-
-    # абстрактный метод, который будет необходимо переопределять для каждого подкласса
-    @abstractmethod
-    def move(self):
-        pass
-
-# a = ChessPiece()
-
-class Queen(ChessPiece):
-
-    def help(self):
-        print('help')
-
-    def move(self):
-        print("Moved Queen to e2e4")
-
-# Мы можем создать экземпляр класса
-q = Queen()
-# И нам доступны все методы класса
-print(q.draw())
-print(q.help())
-print(q.move())
-
-
-# # Множественное наследование
-class A:
-    # pass
-    def hi(self):
-        print("A")
-
-class B(A):
-    pass
-    # def hi(self):
-    #     print("B")
-
-class C(A):
-    pass
-    # def hi(self):
-    #     print("C")
-
-class D(B, C):
-    pass
-    # def hi(self):
-    #     print("D")
-
-d = D().hi()
-print(d)
-print(D.mro())
-
-# class D(B, C):
-#     def call_hi(self):
-#         C.hi(self)
-# d = D()
-# print(d.call_hi())
-
-# class A: pass
-# class B(A): pass
-# class C: pass
-# class D(C): pass
-# class E(B, D): pass
-# print(E.mro())
-
-
-# #=================================================
-# # Полиморфизм
-
 # class Figure:
 #     def __init__(self, color):
 #         self.__color = color
@@ -406,16 +273,13 @@ print(D.mro())
 #     def color(self, c):
 #         self.__color = c
 
-#     def info(self):
-#         print("Figure")
-#         print("Color: " + self.__color)
-
 
 # class Rectangle(Figure):
 #     def __init__(self, width, height, color):
-#         super().__init__(color)
+#         # super – это ключевое слово, которое используется для обращения к родительскому классу.
+#         super().__init__(color) #визов  конструктора родительского класса
+#         self._height = height
 #         self.__width = width
-#         self.__height = height
 
 #     @property
 #     def width(self):
@@ -428,30 +292,182 @@ print(D.mro())
 #         else:
 #             raise ValueError
 
-#     @property
-#     def height(self):
-#         return self.__height
-
-#     @height.setter
-#     def height(self, h):
-#         if h > 0:
-#             self.__height = h
+#     def set_width(self, w):
+#         if w > 0:
+#             self.__width = w
 #         else:
 #             raise ValueError
 
-#     def info(self):
-#         print("Rectangle")
-#         print("Color: " + self.color)
-#         print("Width: " + str(self.width))
-#         print("Height: " + str(self.height))
-#         print("Area: " + str(self.area()))
+#     def height(self):
+#         return self._height
 
 #     def area(self):
-#         return self.__width * self.__height
+#         return self.__width * self._height
 
 
-# fig = Figure("orange")
-# print('fig.info(): ', fig.info())
-# print('--------------------------')
 # rect = Rectangle(10, 20, "green")
-# print('rect.info(): ', rect.info())
+
+
+# print('rect.width: ', rect.width)
+# rect.width = 30
+# print('rect.width: ', rect.width)
+# # rect.width = -30
+# # rect.set_width(50)
+# # print('rect.width: ', rect.width)
+
+
+# print('rect.height: ', rect.height())
+# rect._height = 40
+# print('rect.height: ', rect.height())
+# print('rect.height: ', rect._height)
+
+
+# print('rect.color: ', rect.color)
+# rect.color = "red"
+# print('rect.color: ', rect.color)
+# print('rect.color: ', rect.color_1)
+
+
+# fig = Figure('arange')
+# print('fig.height: ', fig.height())
+# fig._height = 40
+# print('fig.height: ', fig.height())
+# print('fig.height: ', fig._height)
+
+
+# # #Абстрактный класс
+# from abc import ABC, abstractmethod
+# class ChessPiece(ABC):
+#     # общий метод, который будут использовать все наследники этого класса
+#     def draw(self):
+#         print("Drew a chess piece")
+
+#     # абстрактный метод, который будет необходимо переопределять для каждого подкласса
+#     @abstractmethod
+#     def move(self):
+#         pass
+
+# # a = ChessPiece()
+
+# class Queen(ChessPiece):
+#     def help(self):
+#         print('help')
+
+#     def move(self):
+#         print("Moved Queen to e2e4")
+
+# # Мы можем создать экземпляр класса
+# q = Queen()
+# # И нам доступны все методы класса
+# print(q.draw())
+# print(q.help())
+# print(q.move())
+
+
+# # # Множественное наследование
+# class A:
+#     # pass
+#     def hi(self):
+#         print("A")
+
+# class B(A):
+#     # pass
+#     def hi(self):
+#         print("B")
+
+# class C(A):
+#     # pass
+#     def hi(self):
+#         print("C")
+
+# class D(B, C):
+#     # pass
+#     def hi(self):
+#         print("D")
+
+# d = D()
+# print(d.hi())
+# # print(d)
+# print(D.mro())
+
+# # class D(B, C):
+# #     def call_hi(self):
+# #         C.hi(self)
+# # d = D()
+# # print(d.call_hi())
+
+# class A: pass
+# class B(A): pass
+# class C: pass
+# class D(C): pass
+# class E(B, D): pass
+# print(E.mro())
+
+
+#=================================================
+# Полиморфизм
+
+class Figure:
+    def __init__(self, color):
+        self.__color = color
+
+    @property
+    def color(self):
+        return self.__color
+
+    @color.setter
+    def color(self, c):
+        self.__color = c
+
+    def info(self):
+        print("Figure")
+        print("Color: " + self.__color)
+        return self.__color
+
+
+class Rectangle(Figure):
+    def __init__(self, width, height, color):
+        super().__init__(color)
+        self.__width = width
+        self.__height = height
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, w):
+        if w > 0:
+            self.__width = w
+        else:
+            raise ValueError
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, h):
+        if h > 0:
+            self.__height = h
+        else:
+            raise ValueError
+
+    def area(self):
+        return self.__width * self.__height
+
+    def info(self):
+        print("Rectangle")
+        print("Color: " + self.color)
+        print("Width: " + str(self.width))
+        print("Height: " + str(self.height))
+        print("Area: " + str(self.area()))
+        return 'info'
+
+
+fig = Figure("orange")
+# print('dir(fig): ', dir(fig))
+print('fig.info(): ', fig.info())
+print('--------------------------')
+rect = Rectangle(10, 20, "green")
+print('rect.info(): ', rect.info())

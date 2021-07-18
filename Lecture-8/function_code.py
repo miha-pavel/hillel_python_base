@@ -1,21 +1,21 @@
 # import json
 
 
-def hello_world():
-    print("Hello World!")
+# def hello_world():
+#     print("Hello World!")
 
 
-def empty_function():
-    pass
+# def empty_function():
+#     pass
 
 
-def add(a, b):
-    '''
-    Фукнции с позиционними аргументами
-    '''
-    print('a: ', a)
-    print('b: ', b)
-    return a + b
+# def add(a, b):
+#     '''
+#     Фукнции с позиционними аргументами
+#     '''
+#     print('a: ', a)
+#     print('b: ', b)
+#     return a + b
 
 
 # def keyword_function(a=1, b=2):
@@ -33,14 +33,14 @@ def add(a, b):
 #     '''
 #     return a + b + c
 
-# def many(*args, **kwargs):
-#     '''
-#     *args, **kwargs
-#     '''
-#     print('args: ', args)
-#     print('type(args): ', type(args))
-#     print('kwargs: ', kwargs)
-#     print('type(kwargs): ', type(kwargs))
+def many(*args, **kwargs):
+    '''
+    *args, **kwargs
+    '''
+    # print('args: ', args)
+    # print('type(args): ', type(args))
+    print('kwargs: ', kwargs)
+    print('type(kwargs): ', type(kwargs))
 
 # def many(name, job, age, salary):
 #     '''
@@ -64,17 +64,17 @@ def add(a, b):
 
 # # Особенность работи инструкции return
 # # Инструкциия return преривает дальнейшую работу функции
-def my_max(a, b):
-    print('a: ', a)
-    print('b: ', b)
-    if a > b:
-        print('a: ', a)
-        return a
-    elif b > a:
-        print('b: ', b)
-        return b
-    else:
-        return 'equal'
+# def my_max(a, b):
+#     print('a: ', a)
+#     print('b: ', b)
+#     if a > b:
+#         print('a: ', a)
+#         return a
+#     elif b > a:
+#         print('b: ', b)
+#         return b
+#     else:
+#         return 'equal'
 
 
 # def function_return_some_params():
@@ -109,18 +109,18 @@ def my_max(a, b):
 #     c = 3
 #     return a + c
 
-
+# x = 5
 def main():
-    hello_world()
-#     # Пустая функция
-    print(empty_function())
+#     hello_world()
+# #     # Пустая функция
+#     print(empty_function())
 
     # # Фукнции с позиционними аргументами
     # print(add(100, 2000))
     # print(add(2, 1))
     # print(add('ASDSD', 'qwew'))
 
-    # # Недостаточно аргументов
+    # # # Недостаточно аргументов
     # print(add(1))
     # print(add('ASDSD'))
 
@@ -129,26 +129,31 @@ def main():
     # print(total)
 
     # # Неправильное название аргументов
+    # a=2
+    # b=3
+    # print(add(a=a, b=b))
     # add(c=5, d=2)
 
     # Фукнции с именованными аргументами
     # print(keyword_function(a=5, b=4))
     # print(keyword_function(b=4, a=5))
     # print(keyword_function(4, b=5))
-    # print(keyword_function(b=5))
+    # print(keyword_function(a=5))
 
     # Фукнции с позиционними и именованными аргументами
     # mixed_function(b=4, c=5)
-    # print(mixed_function(68,  c=5, b=4))
+    # print(mixed_function(68, c=5, b=4))
     # print(mixed_function(1))
+ 
     # *args, **kwargs
-    # many(1, 2, 3, 4,5,6,7,8,9, name="Mike", job="programmer")
-    # many(name="Mike", job="programmer", age=10, salary=2.5)
+    many(1, 2, 3, 4,5,6,7,8,9, name="Mike", job="programmer")
+    many(name="Mike", job="programmer", age=10, salary=2.5)
+    many({1:2, 3:4, 5:6, 7:8}, name="Mike", job="programmer", age=10, salary=2.5)
 
     # Особенность работи инструкции return
     # Инструкциия return преривает дальнейшую работу функции
-    a = 1
-    b = 2
+    # a = 1
+    # b = 2
     # print(my_max(a, b))
     # qwerty, _ = function_return_some_params()
     # print('_: ', _)
@@ -162,17 +167,19 @@ def main():
     # print(function_a())
     # print(function_b())
 
-    # # Local область видимости
+    # Local область видимости
     # def add_two(a):
-    #     x = 2
+    #     global x
     #     return a + x
     # print(add_two(3))
-    # # print(х)
+    # x = 3
+    # print(x)
 
-    # # Local область видимости
+    # Local область видимости
     # def add_four(a):
     #     x = 2
     #     def add_some():
+    #         b = 3
     #         print("x = " + str(x))
     #         return a + x
     #     return add_some()
